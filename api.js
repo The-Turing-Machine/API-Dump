@@ -20,8 +20,23 @@
             ctrl.hashPassword = function() {
                 var password = elem.find('input');
 
-                var hashedPassword =
-            }
+                var hashedPassword = password.hashCode();
+            };
+
+            ctrl.sendToServer = function(){
+
+            	$.ajax({
+            		url : 'http://192.168.x.x/api/login',
+            		success: function(response){
+            			if(response.status == '100'){
+            				loginApi.setLoginTemplate();
+            			}
+            			else {
+            				loginApi.finalizeLogin();
+            			}
+            		}
+            	});
+            };
         };
 
         String.prototype.hashCode = function() {
