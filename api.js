@@ -6,15 +6,21 @@
             settings = $.extend({}, $.fn.api.default, options);
 
             ctrl.checkElem = function() {
-
+            	try {
+            		if(el.length)
+            			setTemplate();
+            	}
+            	catch {
+            		console.log(err.message);
+            	}
             };
 
             ctrl.setTemplate = function() {
-
+            	
             };
 
             ctrl.getFormVal = function() {
-
+            	
             };
 
             ctrl.hashPassword = function() {
