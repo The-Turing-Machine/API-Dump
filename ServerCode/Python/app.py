@@ -24,7 +24,7 @@ def home():
 @app.route('/login', methods = ['POST'])
 def login():
     user_data = request.json
-    if db[collection].find({"username": user_data['username']}).count() > 0:
+    if db[collection].find({"username": user_data['username']}).limit(1).count() > 0:
         stored_data = db[collection].find({"username": user_data['username']})
     else:
         return jsonify({'status':'User does not exist'})
@@ -33,6 +33,22 @@ def login():
         return jsonify({'status':'Logged In'})
     else:
         return jsonify({'status':'Wrong Password'})
+
+
+@app.route('/register', methods = ['POST'])
+def register():
+    user_data = request.json
+    if db[collection].find({"username": user_data['username']}).limit(1).count() > 0:
+        return jsonify({'status':'User already exists'})
+    else:
+        db[collection].insert(
+        {
+            'user':user_data['username'],
+            'hashed_password': bcrypt.generate_password_hash(user_data['password'],12)
+        })
+        return jsonify({'status':'Created User'})
+
+
 
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
