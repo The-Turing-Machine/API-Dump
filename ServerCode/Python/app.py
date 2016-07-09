@@ -24,7 +24,11 @@ def home():
 @app.route('/login', methods = ['POST'])
 def login():
     user_data = request.json
-    stored_data = db[collection].find({"username": user_data['username']})[0]
+    if db[collection].find({"username": user_data['username']}).count() > 0:
+        stored_data = db[collection].find({"username": user_data['username']})
+    else:
+        return jsonify({'status':'User does not exist'})
+
     if bcrypt.check_password_hash(stored_data['hashed_password'], user_data['password']) == True:
         return jsonify({'status':'Logged In'})
     else:
