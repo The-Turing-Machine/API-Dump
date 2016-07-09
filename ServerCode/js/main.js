@@ -1,4 +1,5 @@
 (function($) {
+
     var loginApi = function(elem, options) {
         var ctrl = $(this),
             el = $(elem),
@@ -8,18 +9,24 @@
         ctrl.checkElem = function() {
             if (el.length)
                 ctrl.setTemplate();
+            else
+                console.log('404 : The given element does not exist!');
         };
 
         ctrl.setTemplate = function() {
             var string = '<form id = "signup-form">' +
                 '  <label>First Name</label>' +
-                '  <input type = "text" name = "firstname" required></input>' +
+                '  <input type = "text" name = "firstname" required>' +
                 '  <label>Last Name</label>' +
-                '  <input type = "text" name = "lastname" required></input>' +
+                '  <input type = "text" name = "lastname" required>' +
                 '  <label>Username</label>' +
-                '  <input type = "text" name = "username" required></input>' +
+                '  <input type = "text" name = "username" required>' +
                 '  <label>Password</label>' +
-                '  <input type = "password" name = "password" required></input>' +
+                '  <input type = "password" name = "password" required>' +
+                '  <label>Login</label>' +
+                '  <input type="submit" name="login onclick="sendToServer("login")">' +
+                '  <label>Register</label>' +
+                '  <input type="submit" name="register onclick="sendToServer("register")">' +
                 '</form>';
 
 
@@ -27,6 +34,11 @@
         };
 
         ctrl.formValidation = function() {
+
+            var script = document.createElement('script');
+            script.type = 'text/javascript';
+            script.src = 'https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.15.0/jquery.validate.min.js';
+            $('body').append(script);
 
             $("#signup-form").validate({
                 rules: {
@@ -61,7 +73,7 @@
         ctrl.getFormVal = function() {
             vars.fname = $("input[name*='firstname']").val();
             vars.lname = $("input[name*='lastname']").val();
-            vars.uname = $("input[name*='username']").vale();
+            vars.uname = $("input[name*='username']").val();
             vars.password = $("input[name*='password']").val();
         };
 
@@ -71,18 +83,37 @@
             var hashedPassword = password.hashCode();
         };
 
-        ctrl.sendToServer = function() {
+        ctrl.sendToServer = function(type) {
 
-            $.ajax({
-                url: 'http://192.168.x.x/api/login',
-                success: function(response) {
-                    if (response.status == '100') {
-                        loginApi.setLoginTemplate();
-                    } else {
-                        loginApi.finalizeLogin();
+            if (type.indexOf('login') > 0) {
+                $.ajax({
+                    url: 'http://172.16.22.233:5000/login',
+                    type: 'json',
+                    method: 'POST',
+                    data: '{"username" : ' + vars.uname + ', "password" : ' + vars.password + '}',
+                    success: function(response) {
+                        if (response.status == '200') {
+                            ctrl.setLoginTemplate();
+                        } else {
+                            ctrl.finalizeLogin();
+                        }
                     }
-                }
-            });
+                });
+            } else {
+                $.ajax({
+                    url: 'http://172.16.22.233:5000/register',
+                    type: 'json',
+                    method: 'POST',
+                    data: '{"username" : ' + vars.uname + ', "password" : ' + vars.password + '}',
+                    success: function(response) {
+                        if (response.status == '200') {
+                            ctrl.setLoginTemplate();
+                        } else {
+                            ctrl.finalizeLogin();
+                        }
+                    }
+                });
+            }
         };
 
         ctrl.init = function() {
