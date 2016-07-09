@@ -16,11 +16,11 @@
             };
 
             ctrl.setTemplate = function() {
-            	
+
             };
 
             ctrl.getFormVal = function() {
-            	
+
             };
 
             ctrl.hashPassword = function() {
