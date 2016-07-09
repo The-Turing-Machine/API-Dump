@@ -27,27 +27,31 @@ def login():
     if db[collection].find({"username": user_data['username']}).limit(1).count() > 0:
         stored_data = db[collection].find({"username": user_data['username']})
     else:
-        return jsonify({'status':'User does not exist'})
+        # return jsonify({'status':'User does not exist'})
+        return '404'
 
     if bcrypt.check_password_hash(stored_data['hashed_password'], user_data['password']) == True:
-        return jsonify({'status':'Logged In'})
+        # return jsonify({'status':'Logged In'})
+        return '200'
     else:
-        return jsonify({'status':'Wrong Password'})
+        # return jsonify({'status':'Wrong Password'})
+        return '405'
 
 
 @app.route('/register', methods = ['POST'])
 def register():
     user_data = request.json
     if db[collection].find({"username": user_data['username']}).limit(1).count() > 0:
-        return jsonify({'status':'User already exists'})
+        # return jsonify({'status':'User already exists'})
+        return '400'
     else:
         db[collection].insert(
         {
             'user':user_data['username'],
             'hashed_password': bcrypt.generate_password_hash(user_data['password'],12)
         })
-        return jsonify({'status':'Created User'})
-
+        # return jsonify({'status':'Created User'})
+        return '202'
 
 
 if __name__ == '__main__':
