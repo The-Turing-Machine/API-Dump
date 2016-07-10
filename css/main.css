@@ -42,7 +42,7 @@ textarea{
   padding-left: 20px;
 }
 .first{
-  background-color: #3d566e;
+  background-color: #9b59b6;
   width: 100%;
   overflow: auto;
   position: relative;
@@ -175,4 +175,17 @@ button{
 }
 .button--text-thick {
 	font-weight: 600;
+}
+
+
+.container{
+  width: 100%;
+  text-align: center;
+  top: 30%;
+  letter-spacing: 2px;
+  height: auto;
+  position: absolute;
+  font-size: 200px;
+  font-weight: bold;
+  font-family: 'Roboto', sans-serif;
 }
