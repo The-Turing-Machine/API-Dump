@@ -92,11 +92,7 @@
                     method: 'POST',
                     data: '{"username" : ' + vars.uname + ', "password" : ' + vars.password + '}',
                     success: function(response) {
-                        if (response.status == '200') {
-                            ctrl.setLoginTemplate();
-                        } else {
-                            ctrl.finalizeLogin();
-                        }
+                        console.log(response);
                     }
                 });
             } else {
@@ -106,11 +102,7 @@
                     method: 'POST',
                     data: '{"username" : ' + vars.uname + ', "password" : ' + vars.password + '}',
                     success: function(response) {
-                        if (response.status == '200') {
-                            ctrl.setLoginTemplate();
-                        } else {
-                            ctrl.finalizeLogin();
-                        }
+                         console.log(response);
                     }
                 });
             }
