@@ -68,33 +68,37 @@
                     <textarea class='text'></textarea>
                     <textarea class='text'></textarea>
                     <div class=buttons>
-                        <button class='gen'>Generate Login !!</button>
+                        <button class='gen'>Generate Login</button>
                         <!-- <button>asda</button> -->
                     </div>
                 </div>
                 <div class='half box'>
-                    <div class='output'></div>
+                    <div class='output'>
+                        <div id="login"></div>
+                    </div>
                 </div>
             </center>
-
-
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-1.12.2.min.js"></script>
     <script>
-        window.jQuery || document.write('<script src="vendor/js/jquery-1.12.2.min.js"><\/script>')
+    window.jQuery || document.write('<script src="vendor/js/jquery-1.12.2.min.js"><\/script>')
     </script>
     <script src="vendor/js/bootstrap.min.js"></script>
     <script src="js/main.js"></script>
+    <script type="text/javascript" src="ServerCode/js/main.js"></script>
     <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
     <script>
-        window.ga = function() {
-            ga.q.push(arguments)
-        };
-        ga.q = [];
-        ga.l = +new Date;
-        ga('create', 'UA-XXXXX-Y', 'auto');
-        ga('send', 'pageview')
+    window.ga = function() {
+        ga.q.push(arguments)
+    };
+    ga.q = [];
+    ga.l = +new Date;
+    ga('create', 'UA-XXXXX-Y', 'auto');
+    ga('send', 'pageview')
+    </script>
+    <script type="text/javascript">
+        $('#login').api();
     </script>
     <script src="https://www.google-analytics.com/analytics.js" async defer></script>
 </body>

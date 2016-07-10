@@ -24,14 +24,14 @@ function hideAddressBar() {
 $(document).ready(function() {
 
     window.addEventListener("load", function() {
-        if (!window.pageYOffset) { hideAddressBar(); } });
+        if (!window.pageYOffset) { hideAddressBar(); }
+    });
     window.addEventListener("orientationchange", hideAddressBar);
 
     changeNav();
 
     $('.gen').click(function() {
-        $('.output').append(
-            '<p>yo<\/p>'
-        )}
-    );
+        if($('.text').innerHTML != '')
+            $('#login').fadeIn('slow');
+    });
 });

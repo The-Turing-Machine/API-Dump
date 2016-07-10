@@ -263,10 +263,11 @@ h3 {
     /*height: 600px;*/
 }
 .box {
-    display: inline-block;
-
+    float: left;
+    left: 8%;
     background-color: #EEEEEE;
     opacity: 0.75;
+    margin: 2%;
 }
 .output {
     position: relative;
@@ -279,7 +280,7 @@ h3 {
     position: relative;
     margin: 5% 5% 0% 5%;
     width: 90%;
-    height: 200px;
+    height: 185px;
     padding: 0px;
 }
 .buttons{
@@ -287,4 +288,12 @@ h3 {
     position: relative;
 
     margin: 5% 5% 0% 5%;
+}
+
+#login {
+    display: none;
+}
+
+#signup-form {
+    
 }
