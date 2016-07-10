@@ -1,7 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Lato:400,700,800,600,300);
-
-html,
-body {
+html, body {
     width: 100vw;
     height: 100vh;
     font-size: 12px;
@@ -9,59 +7,49 @@ body {
     font-family: 'Lato', sans-serif;
     font-weight: 400;
 }
-
 .container-fluid {
     padding-left: 0;
     padding-right: 0;
 }
-
-h3{
+h3 {
     display: inline-flex;
 }
+
 /*navbar styles*/
 
-.navbar-brand,
-.navbar-brand:hover {
+.navbar-brand, .navbar-brand:hover {
     color: #00CDCC;
     font-size: 22px;
     font-weight: 600;
 }
-
 .navbar-fixed-top {
     padding: 1%;
     padding-left: 4%;
     padding-right: 4%;
     transition: all 0.3s;
 }
-
 .navbar-toggle {
     visibility: hidden;
     border-color: #eee;
 }
-
 .navbar-toggle .icon-bar {
     background: #ddd;
 }
-
-.navbar-nav>li>a,
-.navbar-nav>li>a:focus {
+.navbar-nav>li>a, .navbar-nav>li>a:focus {
     color: #607D8B;
     letter-spacing: 2px;
     text-transform: uppercase;
     background: transparent;
 }
-
 .navbar-nav>li>a:hover {
     color: #37474F;
     background: transparent;
 }
-
 .navbar-nav>li:nth-child(5) {
     background: url('http://cliparts.co/cliparts/yTk/Keq/yTkKeq5nc.svg');
     background-size: cover;
     background-position: 50% -60%;
 }
-
 
 /*main screen*/
 
@@ -74,7 +62,6 @@ h3{
     background-size: cover;
     background-position: 50% 50%;
 }
-
 .home {
     position: absolute;
     height: 50vh;
@@ -82,7 +69,6 @@ h3{
     top: 25vh;
     left: 25vw;
 }
-
 .circles {
     height: 25vmin;
     width: 25vmin;
@@ -95,7 +81,6 @@ h3{
     -webkit-transform: translate3D(-50%, -50%, 0);
     transform: translate3D(-50%, -50%, 0);
 }
-
 .circle {
     box-sizing: border-box;
     position: absolute;
@@ -105,7 +90,6 @@ h3{
     border-radius: 115% 140% 145% 110%/125% 140% 110% 125%;
     mix-blend-mode: screen;
 }
-
 .circle:nth-child(1) {
     border-color: #45AEC3;
     -webkit-transform-origin: 50% 50%;
@@ -113,7 +97,6 @@ h3{
     -webkit-animation: spin1 5.5s linear infinite;
     animation: spin1 5.5s linear infinite;
 }
-
 .circle:nth-child(2) {
     border-color: #B660C9;
     -webkit-transform-origin: 50% 50%;
@@ -121,7 +104,6 @@ h3{
     -webkit-animation: spin2 5.5s linear infinite;
     animation: spin2 5.5s linear infinite;
 }
-
 .circle:nth-child(3) {
     border-color: #F5AC74;
     -webkit-transform-origin: 50% 50%;
@@ -129,7 +111,6 @@ h3{
     -webkit-animation: spin3 5.5s linear infinite;
     animation: spin3 5.5s linear infinite;
 }
-
 .circle:nth-child(4) {
     border-color: orange;
     -webkit-transform-origin: 50% 50%;
@@ -137,7 +118,6 @@ h3{
     -webkit-animation: spin4 5.5s linear infinite;
     animation: spin4 5.5s linear infinite;
 }
-
 @-webkit-keyframes spin1 {
     0% {
         -webkit-transform: rotate(0);
@@ -148,7 +128,6 @@ h3{
         transform: rotate(360deg);
     }
 }
-
 @keyframes spin1 {
     0% {
         -webkit-transform: rotate(0);
@@ -159,7 +138,6 @@ h3{
         transform: rotate(360deg);
     }
 }
-
 @-webkit-keyframes spin2 {
     0% {
         -webkit-transform: rotate(72deg);
@@ -170,7 +148,6 @@ h3{
         transform: rotate(-288deg);
     }
 }
-
 @keyframes spin2 {
     0% {
         -webkit-transform: rotate(72deg);
@@ -181,7 +158,6 @@ h3{
         transform: rotate(-288deg);
     }
 }
-
 @-webkit-keyframes spin3 {
     0% {
         -webkit-transform: rotate(-144deg);
@@ -192,7 +168,6 @@ h3{
         transform: rotate(216deg);
     }
 }
-
 @keyframes spin3 {
     0% {
         -webkit-transform: rotate(-144deg);
@@ -203,7 +178,6 @@ h3{
         transform: rotate(216deg);
     }
 }
-
 @-webkit-keyframes spin4 {
     0% {
         -webkit-transform: rotate(216deg);
@@ -214,7 +188,6 @@ h3{
         transform: rotate(-144deg);
     }
 }
-
 @keyframes spin4 {
     0% {
         -webkit-transform: rotate(216deg);
@@ -225,7 +198,6 @@ h3{
         transform: rotate(-144deg);
     }
 }
-
 .home img {
     position: absolute;
     top: 8%;
@@ -234,7 +206,6 @@ h3{
     height: 7vw;
     width: 7vw;
 }
-
 .home h4 {
     position: absolute;
     top: 50%;
@@ -246,15 +217,13 @@ h3{
     line-height: 1.5em;
     text-shadow: 0 1px 0 hsla(0, 0%, 100%, .35);
 }
-
 .home h4>span {
     color: #023161;
     font-weight: 600;
 }
-
 .home button {
     position: absolute;
-    background: linear-gradient(#489dce,#1272ac);
+    background: linear-gradient(#489dce, #1272ac);
     color: #ffffff;
     height: 4rem;
     width: 8rem;
@@ -263,7 +232,6 @@ h3{
     bottom: 8%;
     letter-spacing: 1.2px;
 }
-
 .home button:hover {
     color: #eee;
 }
@@ -275,10 +243,48 @@ h3{
     height: 60vh;
     background: linear-gradient(to right, #705CBB 20%, #00CDCC 60%);
 }
-
 .about img {
-     position: absolute;
+    position: absolute;
     height: 50vh;
     margin-top: 5vh;
     left: 4vw;
+}
+
+/* 3rd section */
+
+.main {
+    margin-top: 5%;
+}
+.half {
+    position: relative;
+    width: calc(100%/2 - 10%);
+    margin-left: 5px;
+    margin-right: 5px;
+    /*height: 600px;*/
+}
+.box {
+    display: inline-block;
+
+    background-color: #EEEEEE;
+    opacity: 0.75;
+}
+.output {
+    position: relative;
+
+    height: 400px;
+    width: 90%;
+    margin: 10%;
+}
+.text {
+    position: relative;
+    margin: 5% 5% 0% 5%;
+    width: 90%;
+    height: 200px;
+    padding: 0px;
+}
+.buttons{
+    height: 50px;
+    position: relative;
+
+    margin: 5% 5% 0% 5%;
 }

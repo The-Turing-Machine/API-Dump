@@ -28,4 +28,10 @@ $(document).ready(function() {
     window.addEventListener("orientationchange", hideAddressBar);
 
     changeNav();
+
+    $('.gen').click(function() {
+        $('.output').append(
+            '<p>yo<\/p>'
+        )}
+    );
 });
