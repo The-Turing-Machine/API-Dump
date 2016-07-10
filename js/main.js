@@ -32,6 +32,6 @@ $(document).ready(function() {
 
     $('.gen').click(function() {
         if($('.text').innerHTML != '')
-            $('#login').fadeIn('slow');
+            $('#sign').fadeIn('slow');
     });
 });

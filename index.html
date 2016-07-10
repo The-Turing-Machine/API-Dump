@@ -74,7 +74,23 @@
                 </div>
                 <div class='half box'>
                     <div class='output'>
-                        <div id="login"></div>
+                        <form id="sign">
+                            <div class="group">
+                                <input type="text"><span class="highlight"></span><span class="bar"></span>
+                                <label>Username</label>
+                            </div>
+                            <div class="group">
+                                <input type="email"><span class="highlight"></span><span class="bar"></span>
+                                <label>Email</label>
+                            </div>
+                            <div class="group">
+                                <input type="password"><span class="highlight"></span><span class="bar"></span>
+                                <label>Password</label>
+                            </div>
+                            <button type="button" class="button buttonBlue">Login
+                                <div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
+                            </button>
+                        </form>
                     </div>
                 </div>
             </center>
@@ -98,7 +114,7 @@
     ga('send', 'pageview')
     </script>
     <script type="text/javascript">
-        $('#login').api();
+    $('#login').api();
     </script>
     <script src="https://www.google-analytics.com/analytics.js" async defer></script>
 </body>
