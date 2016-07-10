@@ -303,8 +303,8 @@ h3 {
 .box {
     float: left;
     left: 8%;
-    background-color: #EEEEEE;
-    opacity: 0.75;
+    /*background-color: #EEEEEE;*/
+    /*opacity: 0.75;*/
     margin: 2%;
 }
 
