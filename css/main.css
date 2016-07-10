@@ -185,7 +185,28 @@ button{
   letter-spacing: 2px;
   height: auto;
   position: absolute;
-  font-size: 200px;
+  font-size: 150px;
   font-weight: bold;
   font-family: 'Roboto', sans-serif;
+  position: relative;
+}
+
+.head3 span{
+
+	font-size: 1.4em;
+	padding-left:5px;
+	color:white;
+	font-weight: 700;
+	/*font-family: 'Bangers', cursive;*/
+	font-family: 'Raleway', Arial, sans-serif;
+  position: relative;
+	/*font-family: 'Roboto', sans-serif;*/
+  top:230px;
+  left:40%;
+
+}
+
+.services{
+  position: absolute;
+  
 }
