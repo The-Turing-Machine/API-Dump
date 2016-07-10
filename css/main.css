@@ -42,7 +42,7 @@ textarea{
   padding-left: 20px;
 }
 .first{
-  background-color: #9b59b6;
+  background-color: #7f8c8d;
   width: 100%;
   overflow: auto;
   position: relative;
@@ -189,11 +189,12 @@ button{
   font-weight: bold;
   font-family: 'Roboto', sans-serif;
   position: relative;
+  color: #2F2F2F;
 }
 
 .head3 span{
 
-	font-size: 1.4em;
+	font-size: 1.5em;
 	padding-left:5px;
 	color:white;
 	font-weight: 700;
@@ -201,12 +202,26 @@ button{
 	font-family: 'Raleway', Arial, sans-serif;
   position: relative;
 	/*font-family: 'Roboto', sans-serif;*/
-  top:230px;
+  top:240px;
   left:40%;
 
 }
 
 .services{
-  position: absolute;
-  
+  position: relative;
+  top:35%;
+  display: block;
+  align-items: center;
+  padding-left: 35%;
+}
+.ser{
+  height:120px;
+  width:120px;
+  margin: 0 20px;
+}
+.ser:hover{
+  transition: translate 0.6s;
+  transition-timing-function: ease-in;
+  transform: translateY(-10px);
+
 }
