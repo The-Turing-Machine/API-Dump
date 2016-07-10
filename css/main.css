@@ -563,3 +563,7 @@ input:focus ~ .highlight {
         opacity: 0;
     }
 }
+
+textarea  {
+    font-size: 20px;
+}
